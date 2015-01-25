@@ -1,20 +1,14 @@
 # Add-Country-Code-To-Iphone-Contacts
 Add Country Code To Iphone Contacts using software. Compatible with Windows, Mac OSX, Linux or any other Operating System that support Python
 
-## Python Installation
-1. For [Windows](https://www.python.org/ftp/python/3.4.2/python-3.4.2.amd64.msi)
+## Installation
 
-2. For [Mac OSX](https://www.python.org/ftp/python/3.4.2/python-3.4.2-macosx10.6.pkg)
-
-3. **Linux usually comes with Python Installed**
-
+### Windows
+0. Download [Python Installer](https://www.python.org/ftp/python/3.4.2/python-3.4.2.amd64.msi)
+1. 
 **Now run the installer you download and install it**
 
-## Download The Source Code File
-[Download](https://www.dropbox.com/s/cye3u7lp9fn7cyf/program.py?dl=1). This files is virus free and stored in Dropbox
-
-## Running
-### Windows
+1. [Download Program](https://www.dropbox.com/s/cye3u7lp9fn7cyf/program.py?dl=1). This files is virus free and stored in Dropbox
 1. Open My Computer
 ![My Computer](https://www.dropbox.com/s/ej0cqd6sl46uc9e/1.jpg?dl=1)
 2. Open Download Folder
@@ -36,6 +30,11 @@ Add Country Code To Iphone Contacts using software. Compatible with Windows, Mac
 10. If the program run successfully it will generate output.vcf file
 
 ### Mac OSX
+0. Download [Python Installer](https://www.python.org/ftp/python/3.4.2/python-3.4.2-macosx10.6.pkg)
+1. 
+**Now run the installer you download and install it**
+
+1. [Download Program](https://www.dropbox.com/s/cye3u7lp9fn7cyf/program.py?dl=1). This files is virus free and stored in Dropbox
 1. Open The Terminal
 ![Terminal](https://www.dropbox.com/s/5d9qqb0bd1tds5m/OS%20X%2010.8-2015-01-25-13-09-13.jpg?dl=1)
 2. Write `cd Downloads/` and press enter to navigate to Download directory
@@ -53,6 +52,7 @@ Add Country Code To Iphone Contacts using software. Compatible with Windows, Mac
 
 
 ### Linux
+0. **Linux usually comes with Python Installed**
 1. Open The Terminal
 ![Terminal](https://www.dropbox.com/s/tw5ky1qyh654421/CS50-2015-01-25-12-36-20.png?dl=1)
 2. Write `cd Downloads/` and press enter to navigate to Download directory
