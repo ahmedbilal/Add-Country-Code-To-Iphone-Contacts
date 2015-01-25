@@ -1,5 +1,5 @@
 # Add-Country-Code-To-Iphone-Contacts
-Add Country Code To Iphone Contacts using software. Compatible with Windows, Mac OSX, Linux or any other Operating System that support Python
+Add Country Code To Iphone Contacts using software. Compatible with Windows, Mac OSX, Linux or any other Operating System that support Python. No Warranty.
 
 ## Your Operating System
 1. [Windows](#windows)
