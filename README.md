@@ -29,7 +29,24 @@ Add Country Code To Iphone Contacts using software. Compatible with Windows, Mac
 ![Run Module](https://www.dropbox.com/s/m5ynxmpx4kefzmi/6.jpg?dl=1)
 7. Your Program is running
 ![Program](https://www.dropbox.com/s/k6c79lwsh6a8fhw/7.jpg?dl=1)
+8. Enter the vcf file which you got from Icloud or other software and press enter
 
-1. Enter the vcf file which you got from Icloud or other software and press enter
-2. Then enter the country code which you want to prefix into phono numbers
-3. If the program run successfully it will generate output.vcf file
+9. Then enter the country code which you want to prefix into phono numbers
+
+10. If the program run successfully it will generate output.vcf file
+
+### Linux
+1. Open The Terminal
+![Terminal](https://www.dropbox.com/s/tw5ky1qyh654421/CS50-2015-01-25-12-36-20.png?dl=1)
+2. Write `cd Downloads/` and press enter to navigate to Download directory
+![Navigating](https://www.dropbox.com/s/4dkszvejid778ld/CS50-2015-01-25-12-36-51.png?dl=1)
+3. Then, Write `python3 ./program.py` and press enter to open the program
+![Program](https://www.dropbox.com/s/mgtmm0hkxzv3msx/CS50-2015-01-25-12-37-46.png?dl=1)
+4. The program is running
+![Program](https://www.dropbox.com/s/bj3fm8gif32t51j/CS50-2015-01-25-12-38-20.png?dl=1)
+5. Enter the vcf file which you got from Icloud or other software and press enter
+
+6. Then enter the country code which you want to prefix into phono numbers
+
+7. If the program run successfully it will generate output.vcf file
+
