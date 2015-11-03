@@ -82,8 +82,11 @@ for line in file:
             newContent.append(line.replace(number, addCountryCode(number,countryCode),1))
         else:
             newContent.append(line)
-    else:
-        newContent.append(line)
+        else:
+            newNumber = addCountryCode(phoneNumber,countryCode)
+            print("Old:\t" + phoneNumber)
+            print("\tNew:\t" + newNumber + "\n")
+            newContent.append(line.replace(phoneNumber, newNumber, 1))
 
 # Output
 
