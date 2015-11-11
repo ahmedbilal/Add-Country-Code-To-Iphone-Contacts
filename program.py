@@ -1,4 +1,4 @@
-"""
+﻿"""
 Author: Ahmed Bilal
 Add Country Code to your iphone contacts file .vcf
 
@@ -17,13 +17,11 @@ Algorithm:
 import os
 
 # Function Definations
-def GetNo(line):
-    """ Return the Number or Email
+def GetPhoneNumber(line):
+    """ Return the Telephone Number
        Arguments: line """
-    if line.find("pref:") != -1:
-        return line[line.find("pref:") + 5:]
-    if line.find("VOICE:") != -1:
-        return line[line.find("VOICE:") + 6:]
+    if line.find("TEL") != -1:
+        return line[line.rfind(":") + 1:]
     
 def hasCountryCode(no):
     """ Returns True if the number already has country code Otherwise False
@@ -37,10 +35,18 @@ def hasCountryCode(no):
 def addCountryCode(no,countryCode):
     """ Return Number with Country Code
         Arguments: Number, Country Code """
-    return no.replace("0",countryCode,1)
+
+    # If number begins with a single 0, get rid of it.
+    # (This assumes that hasCountryCode has already been called to check for 00)
+    if (no.find("0") == 0):
+        no = no.replace("0","",1)
+
+    return countryCode + no
 
 def correctFileName(filename):
     newFileName = ""
+	# Remove unnecessary quotes which could cause false negatives
+    filename = filename.replace("\"", "")
     if filename == "":
         print("Please enter a filename!")
         return -1
@@ -58,38 +64,48 @@ def correctFileName(filename):
         print("File Not Found!")
         return -1
 
+def correctCountryCode(countryCode):
+    # Ensure country code starts with either "00" or "+".
+    if (countryCode.find("+") != 0 and countryCode.find("00") != 0):
+        countryCode = "+" + countryCode
+    return countryCode
+
 
 # Input
 filename = ""
-lineLength = 0
 while True:
     filename = correctFileName(input("Enter vcf filename: "))
     if filename != -1:
         break
     
+while True:
+    countryCode = input("Enter preferred Country Code: ")
+    countryCode = correctCountryCode(countryCode)
+    response = input("Country Code " + countryCode + " will be added to all numbers that don't already begin with + or 00. \n\nOK? (y/n)")
+    if response == "y":
+        break
 
-countryCode = input("Enter preferred Country Code: ")
 file = open(filename,'r')
 newContent = [];
 
 # Computation
 
 for line in file:
-    lineLength = len(line)
-    number = str(GetNo(line))
-    if number != None and line != None:
-        if hasCountryCode(number) == False:
-            newContent.append(line.replace(number, addCountryCode(number,countryCode),1))
-        else:
+    if line != None:
+        phoneNumber = GetPhoneNumber(line)
+
+        if phoneNumber is None or hasCountryCode(phoneNumber):
             newContent.append(line)
-    else:
-        newContent.append(line)
+        else:
+            newNumber = addCountryCode(phoneNumber,countryCode)
+            print("Old:\t" + phoneNumber)
+            print("\tNew:\t" + newNumber + "\n")
+            newContent.append(line.replace(phoneNumber, newNumber, 1))
 
 # Output
-
-outputFile = open('output.vcf','w')
+outputFilename = filename.replace(".vcf", "-updated.vcf", 1)
+outputFile = open(outputFilename,'w')
 outputFile.writelines(newContent)
 outputFile.close();
 
-print("Country Code added to Numbers Successfully\nOutput File:output.vcf")
-input("Press Enter to Exit")
+print("Country Code added to Numbers Successfully\nOutput File:" + outputFilename)
